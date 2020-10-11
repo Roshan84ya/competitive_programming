@@ -83,6 +83,55 @@ n+=1
 nprime(n)
 
 
+###############################################################################
+
+#3rd version when n is very big more than 10**8
+
+"""
+then in this case we cannot allcoate more memory than 10**8 as it may cause memory limit
+exceed so how can we the number that are greater than it
+
+there is another property of the prime number i.e when a number is not divisible
+by the prime number (all the smaller prime number then that number is also a prime)
+number
+
+"""
+def big_is_prime(arr , n):
+
+    for i in arr:
+        if i*i <= n:
+            if n%i == 0:
+                return False
+    return True
+
+    
+
+def nprime(n):
+    
+    prime = [True]*n
+    prime[0] = False
+    prime[1]=False
+    for i in range(2, round(math.sqrt(n))):
+        if prime[i]:
+            for j in range(i*i , n, i):
+                prime[j]=False
+    prime_number = []
+
+    for i in range(1,n+1):
+        if is_prime[i]:
+            prime_number.append(i)
+    
+    return prime_number
+n = int(input())
+
+prime_num = nprime(n)
+print(big_is_prime(prime_num , n))
+
+
+
+
+
+
 
 
     
