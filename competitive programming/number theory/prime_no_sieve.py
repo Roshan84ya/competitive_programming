@@ -18,6 +18,7 @@ here in the prime we are having all the prime number indexes = True and other ha
 the space complexity is O(n) and
 time complexity is O(n*(log(logn)))
 """
+import math
 
 def nprime(n):
     
@@ -46,6 +47,40 @@ nprime(n)
 
 
 
+##############################################################################
+
+#2nd version
+
+"""
+time complexity will not imact much in this case too
+n(log(log(sqrt(n)))
+and space will O(n)
+
+"""
+
+def nprime(n):
+    
+    prime = [True]*n
+    prime[0] = False
+    prime[1]=False
+    for i in range(2, round(math.sqrt(n))):
+        if prime[i]:
+            for j in range(i*i , n, i):
+                prime[j]=False
+
+    i=10
+    j=0
+    while i:
+        if prime[j]:
+            print(j , end = " ")
+            i-=1
+        j+=1
+    print()
+
+    
+n= 10**5
+n+=1
+nprime(n)
 
 
 
