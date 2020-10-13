@@ -1,4 +1,7 @@
 """
+Question:- sum of fibnoccia number of (nth -  mth) term 
+number can be big so use mod= 10**9 + 7
+
 fomula used 
 sum of 1....nth fibnoccia is = fn+2 -1
 f1+f2+f3+f4+.....+f5 = fn+2 -1
